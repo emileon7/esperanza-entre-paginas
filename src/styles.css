@@ -4,6 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-sans: "Lato", system-ui, sans-serif;
+  --color-brand-green: #2e7d4f;
+  --color-brand-green-light: #3d9b68;
+  --color-brand-yellow: #f5c518;
+  --color-brand-blue: #1a3c8f;
+  --color-brand-cream: #fdf9e8;
+  --color-brand-kraft: #e8dcc4;
+}
+
 /*
  * Design system definition.
  *
@@ -63,8 +74,8 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.985 0.005 95);
+  --foreground: oklch(0.18 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -140,5 +151,23 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
   }
 }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+@keyframes float-plane {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+.animate-float { animation: float-plane 6s ease-in-out infinite; }
+html { scroll-behavior: smooth; }
