@@ -4,6 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-sans: "Lato", system-ui, sans-serif;
+  --color-brand-green: #2e7d4f;
+  --color-brand-green-light: #3d9b68;
+  --color-brand-yellow: #f5c518;
+  --color-brand-blue: #1a3c8f;
+  --color-brand-cream: #fdf9e8;
+  --color-brand-kraft: #e8dcc4;
+}
+
 /*
  * Design system definition.
  *
