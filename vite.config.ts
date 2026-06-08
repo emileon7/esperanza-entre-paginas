@@ -13,6 +13,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    base: "/esperanza-entre-paginas/",
+    //base: "/esperanza-entre-paginas/",
   },
 });
