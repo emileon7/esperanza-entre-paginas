@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Esperanza entre Páginas · Soconusco, Chiapas" },
       { name: "description", content: "Proyecto misionero de literatura cristiana en el Soconusco, Chiapas. Compartiendo esperanza, transformando vidas." },
       { name: "author", content: "Esperanza entre Páginas" },
-      { property: "og:title", content: "Esperanza entre Páginas" },
-      { property: "og:description", content: "Compartiendo esperanza, transformando vidas." },
+      { property: "og:title", content: "Esperanza entre Páginas · Soconusco, Chiapas" },
+      { property: "og:description", content: "Proyecto misionero de literatura cristiana en el Soconusco, Chiapas. Compartiendo esperanza, transformando vidas." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Esperanza entre Páginas · Soconusco, Chiapas" },
+      { name: "twitter:description", content: "Proyecto misionero de literatura cristiana en el Soconusco, Chiapas. Compartiendo esperanza, transformando vidas." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ef473015-63d5-4b40-8f15-1187ef9668af/id-preview-39e74dd0--ed2efd53-71f9-4381-a7d5-cd5d607ea83f.lovable.app-1780900071510.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ef473015-63d5-4b40-8f15-1187ef9668af/id-preview-39e74dd0--ed2efd53-71f9-4381-a7d5-cd5d607ea83f.lovable.app-1780900071510.png" },
     ],
     links: [
       {
