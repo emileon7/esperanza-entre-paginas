@@ -7,6 +7,8 @@
 @theme {
   --font-display: "Nunito", system-ui, sans-serif;
   --font-sans: "Lato", system-ui, sans-serif;
+  --font-one: "Fredoka", system-ui, sans-serif;
+  --font-two: "Amatic SC", system-ui, sans-serif;
   --color-brand-green: #2e7d4f;
   --color-brand-green-light: #3d9b68;
   --color-brand-yellow: #f5c518;

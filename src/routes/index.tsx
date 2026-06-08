@@ -5,6 +5,10 @@ import { Logo } from "@/components/landing/Logo";
 import { Reveal } from "@/components/landing/Reveal";
 import { PaperPlane, Star, DashedPath } from "@/components/landing/Decorations";
 
+import postImg from "../assets/post.png";
+import chanPhoto from "../assets/lider/ChanE.png";
+import emilyPhoto from "../assets/lider/Emi.jpg";
+import dannaPhoto from "../assets/lider/Danna.jpeg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -17,8 +21,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const CLABE = "722969028096301884";
-const TARJETA = "5428 7804 1339 0386";
+const CLABE = "638180010078362654";
+const TARJETA = "5101256553957403";
 
 function Index() {
   return (
@@ -26,8 +30,9 @@ function Index() {
       <Nav />
       <Hero />
       <Proyecto />
-      <Impacto />
       <Equipos />
+      <Impacto />
+      
       <ComoApoyar />
       <Donaciones />
       <Contacto />
@@ -52,11 +57,19 @@ function Hero() {
       <Star className="absolute bottom-32 right-20 w-7 h-7 text-[var(--color-brand-yellow)]/70" />
       <PaperPlane className="absolute top-32 left-1/4 w-12 h-12 text-white/70 animate-float" />
       <PaperPlane className="absolute bottom-20 right-1/3 w-10 h-10 text-white/60 animate-float" style={{ animationDelay: "1.5s" }} />
-      <DashedPath className="absolute -top-2 left-1/2 -translate-x-1/2 w-[700px] max-w-none text-white/40" />
+      {/* <DashedPath className="absolute -top-2 left-1/2 -translate-x-1/2 w-[700px] max-w-none text-white/40" /> */}
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div className="inline-block bg-white/95 rounded-3xl px-6 sm:px-12 py-8 shadow-xl ring-1 ring-white/30 animate-fade-up">
-          <Logo size="lg" />
+        <div className="relative inline-block animate-fade-up">
+          <img
+            src={postImg}
+            alt=""
+            className="w-full max-w-[700px] h-auto"
+          />
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Logo size="lg" />
+          </div>
         </div>
         <p className="mt-8 text-xl sm:text-2xl font-display font-bold text-white animate-fade-up" style={{ animationDelay: "150ms" }}>
           "Compartiendo esperanza, transformando vidas"
@@ -103,7 +116,7 @@ function Proyecto() {
             <span className="font-bold"> 4,000 colecciones de libros</span> al DIF Tapachula y comunidades vulnerables de la región.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-[#1C1C1C]/85">
-            Creemos que detrás de cada libro hay mensajes de fe, restauración, amor y salvación — mensajeros silenciosos que llegan a manos de personas quebrantadas, niños vulnerables y familias necesitadas.
+            Creemos que detrás de cada libro hay mensajes de fe, restauración, amor y salvación mensajeros silenciosos que llegan a manos de personas quebrantadas, niños vulnerables y familias necesitadas.
           </p>
         </Reveal>
 
@@ -124,51 +137,109 @@ function Proyecto() {
 function Impacto() {
   const places = [
     {
-      icon: "🏘",
-      title: "Comunidad Pobres Unidos",
-      desc: "Familias vulnerables de la comunidad recibirán colecciones de libros, refrigerios y obsequios especiales, incluyendo peluches para los niños.",
+      title: "CENTRA Tapachula",
+      tipo: "Centro de rehabilitación",
+      desc: "Personas en proceso de rehabilitación recibirán colecciones de libros, refrigerios y obsequios especiales, incluyendo peluches para los niños.",
       team: "Voceros de Esperanza",
-      lead: "Emily Laura Nallely León Méndez",
       date: "18 de julio de 2026",
-      hour: "09:00 am – 12:00 pm",
+      hour: "9:00 am",
+      impacto: "~200 personas",
       accent: "var(--color-brand-green)",
     },
     {
-      icon: "🕊",
       title: "CERESO Tapachula",
+      tipo: "Centro penitenciario",
       desc: "Personas en proceso de reinserción social recibirán literatura cristiana y materiales de esperanza y restauración.",
       team: "Sembradores de Esperanza",
-      lead: "José Chan",
       date: "19 de julio de 2026",
-      hour: null,
+      hour: "Aprox. 10:00 am",
+      impacto: "~200 personas",
       accent: "var(--color-brand-blue)",
     },
+    {
+      title: "DIF Tapachula",
+      tipo: "Institución de asistencia social",
+      desc: "Niños, adultos mayores y familias en situación de vulnerabilidad atendidos por el DIF recibirán libros, juguetes y apoyo especial.",
+      team: "Mensajeros de Esperanza",
+      date: "24 de julio de 2026",
+      hour: "10:30 am",
+      impacto: "~1,000 personas",
+      accent: "var(--color-brand-yellow)",
+    },
   ];
+
   return (
     <section id="impacto" className="relative py-20 sm:py-28 px-4 sm:px-6 bg-[#f4f1e8]/60">
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-brand-green)]">Lugares de impacto</span>
-            <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold text-[var(--color-brand-blue)]">¿Dónde vamos a trabajar?</h2>
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-brand-green)]">
+              Lugares de impacto
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold text-[var(--color-brand-blue)]">
+              ¿Dónde vamos a trabajar?
+            </h2>
           </div>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-6">
+
+        <div className="grid md:grid-cols-3 gap-6">
           {places.map((p, i) => (
             <Reveal key={p.title} delay={i * 150}>
-              <article
-                className="h-full bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-shadow border-l-[6px]"
-                style={{ borderLeftColor: p.accent }}
-              >
-                <div className="text-4xl mb-3">{p.icon}</div>
-                <h3 className="text-2xl font-extrabold text-[var(--color-brand-blue)]">{p.title}</h3>
-                <p className="mt-3 text-[#1C1C1C]/80 leading-relaxed">{p.desc}</p>
-                <dl className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <Field label="Equipo" value={`Grupo "${p.team}"`} />
-                  <Field label="Liderado por" value={p.lead} />
-                  <Field label="Fecha" value={p.date} />
-                  {p.hour && <Field label="Horario" value={p.hour} />}
-                </dl>
+              <article className="h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+
+                {/* Franja de color superior */}
+                <div className="h-2 w-full" style={{ background: p.accent }} />
+
+                <div className="flex flex-col flex-1 p-6 gap-4">
+
+                  {/* Encabezado */}
+                  <div>
+                    <p
+                      className="text-xs font-bold uppercase tracking-widest mb-1"
+                      style={{ color: p.accent }}
+                    >
+                      {p.tipo}
+                    </p>
+                    <h3 className="text-xl font-extrabold text-[var(--color-brand-blue)] leading-tight">
+                      {p.title}
+                    </h3>
+                  </div>
+
+                  {/* Descripción */}
+                  <p className="text-sm text-[#1C1C1C]/70 leading-relaxed flex-1">
+                    {p.desc}
+                  </p>
+
+                  {/* Datos clave */}
+                  <div className="border-t border-gray-100 pt-4 space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-[#1C1C1C]/60">
+                      <span className="font-semibold text-[#1C1C1C]/40 text-xs uppercase tracking-wide w-16">Fecha</span>
+                      <span className="font-medium text-[#1C1C1C]/80">{p.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#1C1C1C]/60">
+                      <span className="font-semibold text-[#1C1C1C]/40 text-xs uppercase tracking-wide w-16">Hora</span>
+                      <span className="font-medium text-[#1C1C1C]/80">{p.hour}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#1C1C1C]/60">
+                      <span className="font-semibold text-[#1C1C1C]/40 text-xs uppercase tracking-wide w-16">Impacto</span>
+                      <span
+                        className="font-bold text-sm"
+                        style={{ color: p.accent }}
+                      >
+                        {p.impacto}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Equipo */}
+                  <div
+                    className="rounded-xl px-3 py-2 text-xs font-semibold text-center"
+                    style={{ background: `color-mix(in srgb, ${p.accent} 12%, transparent)`, color: p.accent }}
+                  >
+                    {p.team}
+                  </div>
+
+                </div>
               </article>
             </Reveal>
           ))}
@@ -190,58 +261,114 @@ function Field({ label, value }: { label: string; value: string }) {
 function Equipos() {
   const teams = [
     {
-      emoji: "🟡",
       name: "Voceros de Esperanza",
       role: "Directora Asociada",
-      person: "Emily Laura Nallely León Méndez",
-      districts: "Carrillo Puerto, Independencia, Centro, Cacahoatán, La Obrera",
-      mision: "Gestión de recursos e impacto en Pobres Unidos",
-      bg: "var(--color-brand-yellow)",
-      fg: "#1C1C1C",
+      person: "Emily León Méndez",
+      carrera: "Estudiante de Ingeniería en Sistemas Computacionales",
+      districts: ["Carrillo Puerto", "Independencia", "Centro", "Cacahoatán", "La Obrera"],
+      comunidad: "CENTRA (Centro Especializado para la Prevención y Tratamiento en Adicciones)",
+      image: emilyPhoto,
+      imagePosition: "center 20%",
     },
     {
-      emoji: "🟢",
       name: "Sembradores de Esperanza",
       role: "Asociado en Formación",
-      person: "José Chan",
-      districts: "Ciudad Hidalgo, Frontera Hidalgo, Tuxtla Chico, Mazatán, La Unidad",
-      mision: "Impacto misionero en el CERESO de Tapachula",
-      bg: "var(--color-brand-green)",
-      fg: "#ffffff",
+      person: "José Chan Chim",
+      carrera: "Aspirante de la Licenciatura en Teología",
+      districts: ["Ciudad Hidalgo", "Frontera Hidalgo", "Tuxtla Chico", "Mazatán", "La Unidad"],
+      comunidad: "CERESO de Tapachula",
+      image: chanPhoto,
+      imagePosition: "center 10%",  
+    },
+    {
+      name: "Mensajeros de Esperanza", // ← cambia el nombre
+      role: "Secretaria Asociada", // ← cambia el rol
+      person: "Danna López Monzon", // ← cambia el nombre
+      carrera: "Aspirante de la Licenciatura en Psicología Clínica", // ← cambia la carrera
+      districts: ["Azteca", "5 de Febrero", "Colinas del Rey", "Huehuetna Pueblo", "Zaragoza"],
+      comunidad: "DIF TAPACHULA",
+      image: dannaPhoto,
+      imagePosition: "center 10%",
     },
   ];
+
   return (
     <section id="equipos" className="relative py-20 sm:py-28 px-4 sm:px-6">
       <PaperPlane className="absolute top-12 right-10 w-10 h-10 text-[var(--color-brand-blue)]/30 animate-float" />
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-brand-green)]">Las personas</span>
-            <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold text-[var(--color-brand-blue)]">Nuestros equipos</h2>
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-brand-green)]">
+              Las personas
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold text-[var(--color-brand-blue)]">
+              Nuestros equipos
+            </h2>
           </div>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-6">
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {teams.map((t, i) => (
             <Reveal key={t.name} delay={i * 150}>
-              <article
-                className="h-full rounded-3xl p-8 shadow-md ring-1 ring-black/5"
-                style={{ background: t.bg, color: t.fg }}
-              >
-                <div className="text-3xl">{t.emoji}</div>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold">{t.name}</h3>
-                <div className="mt-5 space-y-3 text-sm">
+              <article className="h-full flex flex-col rounded-3xl overflow-hidden bg-[var(--color-brand-green)] text-white shadow-md">
+
+                {/* Foto del líder */}
+                <div className="relative h-90 overflow-hidden">
+                  <img
+                    src={t.image}
+                    alt={t.person}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: t.imagePosition}}
+                  />
+                  {/* Degradado suave hacia el verde de la tarjeta */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-green)] via-transparent to-transparent" />
+                </div>
+
+                {/* Info */}
+                <div className="flex flex-col flex-1 px-6 pb-7 pt-2 space-y-5">
+
+                  {/* Nombre y rol */}
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider opacity-80">{t.role}</div>
-                    <div className="text-base font-semibold">{t.person}</div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                      {t.role}
+                    </p>
+                    <h3 className="text-lg font-extrabold leading-snug">{t.person}</h3>
+                    <p className="text-sm text-white/75 mt-0.5">{t.carrera}</p>
                   </div>
+
+                  {/* Nombre del equipo */}
+                  <div className="border-t border-white/20 pt-4">
+                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                      Equipo
+                    </p>
+                    <p className="font-bold text-base">{t.name}</p>
+                  </div>
+
+                  {/* Distritos */}
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider opacity-80">Distritos</div>
-                    <div className="text-base">{t.districts}</div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">
+                      Distritos a cargo
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {t.districts.map((d) => (
+                        <span
+                          key={d}
+                          className="text-xs font-medium bg-white/15 rounded-full px-2.5 py-1"
+                        >
+                          {d}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-wider opacity-80">Misión</div>
-                    <div className="text-base font-medium italic">{t.mision}</div>
+
+                  {/* Comunidad a impactar */}
+                  <div className="mt-auto pt-4 border-t border-white/20">
+                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                      Comunidad a impactar
+                    </p>
+                    <p className="text-sm font-semibold italic">{t.comunidad}</p>
                   </div>
+
                 </div>
               </article>
             </Reveal>
@@ -287,13 +414,23 @@ function ComoApoyar() {
 
 function Donaciones() {
   const [copied, setCopied] = useState(false);
-  const copy = async () => {
+  const copyClabe = async () => {
     try {
       await navigator.clipboard.writeText(CLABE);
+      
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {}
   };
+
+  const copyTarjeta = async () => {
+    try {
+      await navigator.clipboard.writeText(TARJETA); 
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {}
+  };
+
   return (
     <section id="donaciones" className="relative py-20 sm:py-28 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
@@ -321,14 +458,24 @@ function Donaciones() {
             <div className="mt-6 space-y-5">
               <DataRow label="No. Tarjeta" value={TARJETA} />
               <DataRow label="Cuenta CLABE" value={CLABE} mono />
-              <DataRow label="Concepto sugerido" value='Donativo "Esperanza entre Páginas"' />
+              <DataRow label="Concepto sugerido" value='Donativo "Esperanza entre Páginas" - Equipo "Nombre del Equipo"' />
             </div>
-            <button
-              onClick={copy}
+            <div className=" pt-6 flex gap-3">
+              <button
+              onClick={copyClabe}
               className="mt-7 w-full sm:w-auto rounded-full bg-[var(--color-brand-green)] hover:bg-[var(--color-brand-green-light)] text-white font-bold px-6 py-3 shadow-md transition"
             >
               {copied ? "✓ CLABE copiada" : "Copiar CLABE"}
             </button>
+              <button
+              onClick={copyTarjeta}
+              className="mt-7 w-full sm:w-auto rounded-full bg-[var(--color-brand-green)] hover:bg-[var(--color-brand-green-light)] text-white font-bold px-6 py-3 shadow-md transition"
+            >
+              {copied ? "✓ TARJETA copiada" : "Copiar TARJETA"}
+            </button>
+            </div>
+            
+            
           </div>
         </Reveal>
         <Reveal delay={240}>
@@ -362,11 +509,18 @@ function Contacto() {
       wa: "528261150953",
     },
     {
-      name: "Helen Ordoñez",
-      role: "Colportora — Distrito Azteca",
-      phone: "8251150953",
+      name: "Danna López Monzon",
+      role: "Secretaria Asociada — Mensajeros de Esperanza",
+      phone: "9903341019",
       email: null,
-      wa: "528251150953",
+      wa: "9903341019",
+    },
+    {
+      name: "José Chan Chim",
+      role: "Asociado en Formación — Sembradores de Esperanza",
+      phone: " 9997437659",
+      email: null,
+      wa: "9997437659",
     },
   ];
   return (
@@ -420,7 +574,7 @@ function Footer() {
           <div className="font-semibold">Universidad de Montemorelos · Grupo Emprendum</div>
           <div className="opacity-80">Tapachula, Chiapas, México · 2026</div>
           <div className="mt-2 inline-block px-3 py-1 rounded-full bg-[var(--color-brand-yellow)]/20 text-[var(--color-brand-yellow)] text-xs font-bold tracking-wider uppercase">
-            Cruzando Fronteras — Proyecto Nacional
+            Cruzando Fronteras — Proyecto Nacional - Esperanza entre Páginas
           </div>
         </div>
       </div>

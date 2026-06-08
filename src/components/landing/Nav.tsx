@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Logo } from "./Logo";
+import logo from "../../assets/logo-e.png";
 
 const links = [
   { href: "#proyecto", label: "Proyecto" },
@@ -21,13 +21,13 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled ? "bg-white/90 backdrop-blur shadow-sm" : "bg-white/40 backdrop-blur-sm"
+        scrolled ? "bg-white/90 backdrop-blur shadow-sm" : "bg-white/100 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <Logo size="sm" />
-        </a>
+        <div className="">
+          <img src={logo} alt="Esperanza entre Páginas" className="w-64  h-auto" />
+        </div>
         <nav className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="text-sm font-semibold text-[#1C1C1C]/80 hover:text-[var(--color-brand-green)] transition-colors">
