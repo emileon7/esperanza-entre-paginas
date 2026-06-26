@@ -9,6 +9,8 @@ import postImg from "../assets/post.png";
 import chanPhoto from "../assets/lider/ChanE.png";
 import emilyPhoto from "../assets/lider/Emi.jpg";
 import dannaPhoto from "../assets/lider/Danna.jpeg";
+import JonaPhoto from "../assets/lider/Jonathan.jpeg";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -29,6 +31,7 @@ function Index() {
     <div id="top" className="min-h-screen scroll-smooth bg-[#FAFAF7] text-[#1C1C1C]">
       <Nav />
       <Hero />
+      <Contador />
       <Proyecto />
       <Equipos />
       <Impacto />
@@ -40,7 +43,26 @@ function Index() {
     </div>
   );
 }
-
+function Contador() {
+  return (
+    <section className="px-12 py-4 sm:px-12 lg:px-7">
+      <div className="mx-auto max-w-5xl overflow-hidden rounded-[20px] border border-black/5 bg-white p-3 shadow-sm sm:p-4 hover:translate-y-1 transition-transform">
+        <iframe
+          src="https://es.watchisup.com/divers/esperanza-entre-paginas/embed"
+          width="100%"
+          height="500"
+          frameBorder="0"
+          title="Cuenta regresiva Esperanza entre Páginas"
+          className="w-full rounded-[16px] pointer-events-none"
+          style={{ backgroundColor: "var(--color-brand-green)" }}
+        />
+        <p className="mt-3 text-center text-[11px] text-[#999]" style={{ fontFamily: "var(--font-display)" }}>
+          Cuenta regresiva Esperanza entre Páginas
+        </p>
+      </div>
+    </section>
+  );
+}
 function Hero() {
   return (
     <section
@@ -81,7 +103,7 @@ function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "450ms" }}>
           <a
             href="#donaciones"
-            className="rounded-full bg-[var(--color-brand-yellow)] hover:brightness-105 text-[#1C1C1C] font-bold px-8 py-4 shadow-lg shadow-black/20 transition-transform hover:-translate-y-0.5"
+            className="rounded-full bg-[var(--color-brand-yellow)] hover:brightness-105 text-[#1C1C1C] font-bold px-8 py-4 shadow-lg shadow-black/20 transition-transform hover:translate-y-1"
           >
             Apóyanos con una donación
           </a>
@@ -113,7 +135,7 @@ function Proyecto() {
         <Reveal delay={120}>
           <p className="mt-6 text-lg leading-relaxed text-[#1C1C1C]/85">
             Somos parte del proyecto nacional <span className="font-bold text-[var(--color-brand-green)]">Cruzando Fronteras</span> de la Universidad de Montemorelos. Nuestro grupo, asignado al Soconusco, busca donar
-            <span className="font-bold"> 4,000 colecciones de libros</span> al DIF Tapachula y comunidades vulnerables de la región.
+            <span className="font-bold"> colecciones de libros</span> al DIF Tapachula y a un centro de rehabilitación CENTRA.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-[#1C1C1C]/85">
             Creemos que detrás de cada libro hay mensajes de fe, restauración, amor y salvación mensajeros silenciosos que llegan a manos de personas quebrantadas, niños vulnerables y familias necesitadas.
@@ -141,21 +163,12 @@ function Impacto() {
       tipo: "Centro de rehabilitación",
       desc: "Personas en proceso de rehabilitación recibirán colecciones de libros, refrigerios y obsequios especiales, incluyendo peluches para los niños.",
       team: "Voceros de Esperanza",
-      date: "18 de julio de 2026",
-      hour: "9:00 am",
+      date: "23 de julio de 2026",
+      hour: "4:30 am",
       impacto: "~200 personas",
       accent: "var(--color-brand-green)",
     },
-    {
-      title: "CERESO Tapachula",
-      tipo: "Centro penitenciario",
-      desc: "Personas en proceso de reinserción social recibirán literatura cristiana y materiales de esperanza y restauración.",
-      team: "Sembradores de Esperanza",
-      date: "19 de julio de 2026",
-      hour: "Aprox. 10:00 am",
-      impacto: "~200 personas",
-      accent: "var(--color-brand-blue)",
-    },
+
     {
       title: "DIF Tapachula",
       tipo: "Institución de asistencia social",
@@ -163,7 +176,7 @@ function Impacto() {
       team: "Mensajeros de Esperanza",
       date: "24 de julio de 2026",
       hour: "10:30 am",
-      impacto: "~1,000 personas",
+      impacto: "200 personas",
       accent: "var(--color-brand-yellow)",
     },
   ];
@@ -182,7 +195,7 @@ function Impacto() {
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {places.map((p, i) => (
             <Reveal key={p.title} delay={i * 150}>
               <article className="h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
@@ -231,14 +244,6 @@ function Impacto() {
                     </div>
                   </div>
 
-                  {/* Equipo */}
-                  <div
-                    className="rounded-xl px-3 py-2 text-xs font-semibold text-center"
-                    style={{ background: `color-mix(in srgb, ${p.accent} 12%, transparent)`, color: p.accent }}
-                  >
-                    {p.team}
-                  </div>
-
                 </div>
               </article>
             </Reveal>
@@ -266,7 +271,6 @@ function Equipos() {
       person: "Emily León Méndez",
       carrera: "Estudiante de Ingeniería en Sistemas Computacionales",
       districts: ["Carrillo Puerto", "Independencia", "Centro", "Cacahoatán", "La Obrera"],
-      comunidad: "CENTRA (Centro Especializado para la Prevención y Tratamiento en Adicciones)",
       image: emilyPhoto,
       imagePosition: "center 20%",
     },
@@ -290,6 +294,16 @@ function Equipos() {
       image: dannaPhoto,
       imagePosition: "center 10%",
     },
+
+    {
+      name: "",
+      person: "Jonathan Vazquez",
+      role: "Capellán Asociado",
+      carrera: "Aspirante de la Licenciatura en Teología",
+      districts: [""],
+      image: JonaPhoto,
+      imagePosition: "center 10%",
+    }
   ];
 
   return (
@@ -302,7 +316,7 @@ function Equipos() {
               Las personas
             </span>
             <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold text-[var(--color-brand-blue)]">
-              Nuestros equipos
+              Nuestros Equipo
             </h2>
           </div>
         </Reveal>
@@ -337,37 +351,35 @@ function Equipos() {
                   </div>
 
                   {/* Nombre del equipo */}
-                  <div className="border-t border-white/20 pt-4">
-                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
-                      Equipo
-                    </p>
-                    <p className="font-bold text-base">{t.name}</p>
-                  </div>
+                  {t.name?.trim() ? (
+                    <div className="border-t border-white/20 pt-4">
+                      <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                        Equipo
+                      </p>
+                      <p className="font-bold text-base">{t.name}</p>
+                    </div>
+                  ) : null}
 
                   {/* Distritos */}
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">
-                      Distritos a cargo
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {t.districts.map((d) => (
-                        <span
-                          key={d}
-                          className="text-xs font-medium bg-white/15 rounded-full px-2.5 py-1"
-                        >
-                          {d}
-                        </span>
-                      ))}
+                  {t.districts?.some((d) => d?.trim()) ? (
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">
+                        Distritos a cargo
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {t.districts.filter((d) => d?.trim()).map((d) => (
+                          <span
+                              key={d}
+                            className="text-xs font-medium bg-white/15 rounded-full px-2.5 py-1"
+                          >
+                            {d}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
 
-                  {/* Comunidad a impactar */}
-                  <div className="mt-auto pt-4 border-t border-white/20">
-                    <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
-                      Comunidad a impactar
-                    </p>
-                    <p className="text-sm font-semibold italic">{t.comunidad}</p>
-                  </div>
+                 
 
                 </div>
               </article>
@@ -399,7 +411,7 @@ function ComoApoyar() {
         <div className="grid md:grid-cols-3 gap-6">
           {ways.map((w, i) => (
             <Reveal key={w.title} delay={i * 120}>
-              <div className="h-full rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/20 p-7 text-center hover:bg-white/15 transition">
+              <div className="h-full rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/20 p-7 text-center hover:bg-white/15 hover:translate-y-2 transition-transform duration-300">
                 <div className="text-5xl">{w.icon}</div>
                 <h3 className="mt-4 text-xl font-extrabold">{w.title}</h3>
                 <p className="mt-2 text-white/85">{w.desc}</p>
@@ -413,21 +425,23 @@ function ComoApoyar() {
 }
 
 function Donaciones() {
-  const [copied, setCopied] = useState(false);
+  const [copiedTarjeta, setCopiedTarjeta] = useState(false);
+  const [copiedClabe, setCopiedClabe] = useState(false);
+
   const copyClabe = async () => {
     try {
       await navigator.clipboard.writeText(CLABE);
       
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopiedClabe(true);
+      setTimeout(() => setCopiedClabe(false), 2000);
     } catch {}
   };
 
   const copyTarjeta = async () => {
     try {
       await navigator.clipboard.writeText(TARJETA); 
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopiedTarjeta(true);
+      setTimeout(() => setCopiedTarjeta(false), 2000);
     } catch {}
   };
 
@@ -458,20 +472,20 @@ function Donaciones() {
             <div className="mt-6 space-y-5">
               <DataRow label="No. Tarjeta" value={TARJETA} />
               <DataRow label="Cuenta CLABE" value={CLABE} mono />
-              <DataRow label="Concepto sugerido" value='Donativo "Esperanza entre Páginas" - Equipo "Nombre del Equipo"' />
+              <DataRow label="Concepto sugerido" value='Donativo "Esperanza entre Páginas"' />
             </div>
             <div className=" pt-6 flex gap-3">
               <button
               onClick={copyClabe}
               className="mt-7 w-full sm:w-auto rounded-full bg-[var(--color-brand-green)] hover:bg-[var(--color-brand-green-light)] text-white font-bold px-6 py-3 shadow-md transition"
             >
-              {copied ? "✓ CLABE copiada" : "Copiar CLABE"}
+              {copiedClabe ? "✓ CLABE copiada" : "Copiar CLABE"}
             </button>
               <button
               onClick={copyTarjeta}
               className="mt-7 w-full sm:w-auto rounded-full bg-[var(--color-brand-green)] hover:bg-[var(--color-brand-green-light)] text-white font-bold px-6 py-3 shadow-md transition"
             >
-              {copied ? "✓ TARJETA copiada" : "Copiar TARJETA"}
+              {copiedTarjeta ? "✓ TARJETA copiada" : "Copiar TARJETA"}
             </button>
             </div>
             
@@ -513,12 +527,12 @@ function Contacto() {
       role: "Secretaria Asociada — Mensajeros de Esperanza",
       phone: "9903341019",
       email: null,
-      wa: "9903341019",
+      wa: "529903341019",
     },
     {
       name: "José Chan Chim",
       role: "Asociado en Formación — Sembradores de Esperanza",
-      phone: " 9997437659",
+      phone: "9997437659",
       email: null,
       wa: "9997437659",
     },
